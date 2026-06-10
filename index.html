@@ -190,7 +190,7 @@
             
             <div class="footer-box feedback-box">
                 <h3>Give Your Feedback</h3>
-                <form id="feedbackForm" class="feedback-form">
+                <form id="feedbackForm" class="feedback-form" onsubmit="event.preventDefault();">
                     <input type="text" id="fbName" placeholder="Your Name" required>
                     <textarea id="fbMessage" placeholder="Share your experience..." rows="3" required></textarea>
                     <button type="submit" id="fbSubmitBtn" class="btn-submit">Submit Feedback</button>
@@ -209,7 +209,7 @@
 
             <div class="footer-box upload-box">
                 <h3>Hire Me / Order Work</h3>
-                <form action="#" method="POST" enctype="multipart/form-data" class="upload-form">
+                <form class="upload-form" onsubmit="event.preventDefault(); alert('Project details captured locally!');">
                     <input type="email" placeholder="Your Email" required>
                     <textarea placeholder="Describe your project (e.g., What kind of editing do you need?)" rows="2" required></textarea>
                     
@@ -272,10 +272,9 @@
         bottom: 0;
         width: 50px;
         height: 2px;
-        background-color: #00e676; /* Accent color */
+        background-color: #00e676;
     }
 
-    /* Forms Styling */
     .feedback-form, .upload-form {
         display: flex;
         flex-direction: column;
@@ -325,7 +324,6 @@
         background: #cccccc;
     }
 
-    /* Custom File Upload Button */
     .file-upload-wrapper {
         position: relative;
     }
@@ -350,7 +348,6 @@
         background: #252525;
     }
 
-    /* Scrollbar tweak for Feedback list */
     #feedbackList::-webkit-scrollbar {
         width: 4px;
     }
@@ -359,7 +356,6 @@
         border-radius: 10px;
     }
 
-    /* Social Icons Styling */
     .connect-box p {
         color: #aaa;
         font-size: 0.95rem;
@@ -401,45 +397,43 @@
 
     <script>
         document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Default page refresh rokne ke liye
+            e.preventDefault(); // Ab yeh perfectly standard submit flow ko rokega
             
-            // Elements select karna
             const nameInput = document.getElementById('fbName');
             const messageInput = document.getElementById('fbMessage');
             const submitBtn = document.getElementById('fbSubmitBtn');
             const feedbackList = document.getElementById('feedbackList');
 
-            // Values get karna
             const userName = nameInput.value.trim();
             const userMessage = messageInput.value.trim();
 
             if(userName === "" || userMessage === "") return;
 
-            // 1. Naya feedback element generate karna aur list me top par add karna
+            // Naya feedback dynamic list me push karna
             const newFeedback = document.createElement('div');
-            newFeedback.className = "bg-zinc-900 p-3 rounded border border-zinc-800 text-sm animate-fade-in";
+            newFeedback.className = "bg-zinc-900 p-3 rounded border border-zinc-800 text-sm";
             newFeedback.innerHTML = `
                 <p class="font-bold text-emerald-400 mb-1">${userName}</p>
                 <p class="text-gray-300">${userMessage}</p>
             `;
             feedbackList.insertBefore(newFeedback, feedbackList.firstChild);
 
-            // 2. Input boxes clear karna
+            // Inputs refresh clear down karna
             nameInput.value = "";
             messageInput.value = "";
 
-            // 3. Button change behavior (Submit Feedback -> Submitted! -> Submit Feedback)
+            // Button status update UI feedback
             submitBtn.textContent = "Submitted!";
-            submitBtn.style.backgroundColor = "#fff"; // UI indication change ke liye temporary white background
+            submitBtn.style.backgroundColor = "#fff";
             submitBtn.style.color = "#000";
-            submitBtn.disabled = true; // Double submit control karne ke liye
+            submitBtn.disabled = true;
 
             setTimeout(() => {
                 submitBtn.textContent = "Submit Feedback";
-                submitBtn.style.backgroundColor = "#00e676"; // Wapas custom color
+                submitBtn.style.backgroundColor = "#00e676";
                 submitBtn.style.color = "#000";
                 submitBtn.disabled = false;
-            }, 2000); // 2 seconds delay
+            }, 2000);
         });
     </script>
 </body>
