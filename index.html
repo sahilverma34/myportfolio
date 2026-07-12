@@ -138,9 +138,15 @@ allowfullscreen>
                     </li>
 
                     <li class="flex flex-col lg:flex-row items-center gap-8 bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
-                        <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                            https://www.youtube.com/embed/faoFcEpIFtY
-                        </div>
+                      <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
+    <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/faoFcEpIFtY"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
                         <div class="w-full lg:w-1/2 space-y-3">
                             <h4 class="text-xl md:text-3xl font-extrabold text-white leading-tight">Premium Destination Shoot<br>MBA Jagmalwali </h4>
                             <p class="text-zinc-400 text-sm md:text-base leading-relaxed line-clamp-3">
@@ -244,7 +250,11 @@ allowfullscreen>
         <!-- 1. FEEDBACK SECTION -->
         <div class="footer-box feedback-box">
             <h3>Give Your Feedback</h3>
-            <form action="#" method="POST" class="feedback-form">
+            <form action="https://formsubmit.co/nokhwals18@gmail.com" method="POST" class="feedback-form">
+
+<input type="hidden" name="_subject" value="New Portfolio Feedback">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
                 <input type="text" placeholder="Your Name" required>
                 <textarea placeholder="Share your experience..." rows="3" required></textarea>
                 <button type="submit" class="btn-submit">Submit Feedback</button>
