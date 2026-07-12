@@ -247,19 +247,20 @@ allowfullscreen>
 <section class="footer-cta-section">
     <div class="footer-container">
         
-        <!-- 1. FEEDBACK SECTION -->
-        <div class="footer-box feedback-box">
-            <h3>Give Your Feedback</h3>
-            <form action="https://formsubmit.co/nokhwals18@gmail.com" method="POST" class="feedback-form">
-
-<input type="hidden" name="_subject" value="New Portfolio Feedback">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-                <input type="text" placeholder="Your Name" required>
-                <textarea placeholder="Share your experience..." rows="3" required></textarea>
-                <button type="submit" class="btn-submit">Submit Feedback</button>
-            </form>
-        </div>
+       <!-- 1. FEEDBACK SECTION -->
+<div class="footer-box feedback-box">
+    <h3>Give Your Feedback</h3>
+    
+    <!-- The action attribute is now your Formspree URL -->
+    <form action="https://formspree.io/f/mbdnrzna" method="POST" class="feedback-form">
+        
+        <!-- Added 'name' attributes so Formspree can capture the data -->
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <textarea name="Feedback" placeholder="Share your experience..." rows="3" required></textarea> 
+        
+        <button type="submit" class="btn-submit">Submit Feedback</button>
+    </form>
+</div>
 
         <!-- 2. CLIENT UPLOAD & WORK REQUEST SECTION -->
         <div class="footer-box upload-box">
