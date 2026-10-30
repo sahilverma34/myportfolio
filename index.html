@@ -3,15 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Creations | Video Editor</title>
+    <title>Sahil Creations | Cinematic Video Editor</title>
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Smooth scrolling */
         html { scroll-behavior: smooth; }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--gold:#e8c27a}
+        body{font-family:'Inter',system-ui,sans-serif;scroll-padding-top:56px}
+        .font-display{font-family:'Playfair Display',Georgia,serif}
+        .site-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(0,0,0,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+        .btn-gold,.btn-gold:hover{background:var(--gold);color:#111}
+        .btn-gold:hover{background:#f3d79c}
+        .hero-in{animation:heroIn 1.1s cubic-bezier(.2,.7,.2,1) both}
+        @keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+        .stats{padding:64px 0}
+        .xp-card{padding:26px 16px;text-align:center;border:1px solid #262626;border-radius:16px;background:linear-gradient(160deg,#161616,#0a0a0a);transition:border-color .3s,transform .3s}
+        .xp-card:hover{border-color:rgba(232,194,122,.5);transform:translateY(-3px)}
+        .xp-num{font-size:2.4rem;line-height:1.1;color:var(--gold)}
+        .xp-card h3{margin-top:8px;font-size:1.2rem;color:#f3efe6}
+        .pill{padding:8px 20px;border-radius:99px;border:1px solid rgba(232,194,122,.4);background:rgba(232,194,122,.06);color:#f3efe6;font-size:.95rem}
+        #latest-work{background:radial-gradient(900px 500px at 50% 0,rgba(232,194,122,.07),transparent 70%),#000}
+        .sec-title{font-size:1.75rem;margin-bottom:2rem;padding-left:14px;border-left:3px solid var(--gold);color:#f3efe6}
+        .work-card{background:linear-gradient(160deg,#151515,#0a0a0a);border:1px solid #242424;transition:transform .3s,border-color .3s,box-shadow .3s}
+        .work-card:hover{transform:translateY(-4px);border-color:rgba(232,194,122,.5);box-shadow:0 22px 50px -24px rgba(232,194,122,.35)}
+        .work-card p{line-height:1.7}
+        @media(prefers-reduced-motion:reduce){.hero-in{animation:none}.work-card{transition:none}html{scroll-behavior:auto}}
+    </style>
 </head>
-<body class="bg-black text-white font-sans antialiased">
+<body id="top" class="bg-black text-white antialiased">
+<nav class="site-nav"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+<a href="#top" class="font-display text-xl font-bold">Sahil Creations</a>
+<div class="flex gap-6 text-sm text-zinc-300"><a href="#latest-work" class="hover:text-white">Work</a><a href="#contact" class="hover:text-white">Contact</a></div></div></nav>
+
 
        <section class="relative h-screen flex items-center justify-center overflow-hidden">
         
@@ -30,7 +58,7 @@
                 IG| _sahil_nokhwal_<span class="mx-2">|</span> @visionaryvibee
             </p>
 
-                       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                       <h1 class="font-display hero-in text-5xl md:text-8xl font-bold tracking-tight">
                  <span class="text-white">Sahil Creations</span>
             </h1>
             <p class="text-xl md:text-2xl font-medium text-gray-300">
@@ -44,14 +72,15 @@
 
             <!-- Core Offerings / Tags -->
             <div class="flex flex-wrap justify-center gap-3 pt-2">
-                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">🎬 Cinematic Films</span>
-                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">💍 Wedding Aftermovies</span>
-                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">⚡ High-Impact Reels</span>
+                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">🎬 Short Cinematic</span>
+                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">🎞️ Long Cinematic</span>
+                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">🎙️ Long Podcasts</span>
+                <span class="px-3 py-1 text-xs md:text-sm bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">💍 Pre-Wedding</span>
             </div>
 
             <!-- Contact / CTA Button -->
             <div class="pt-6">
-                <a href="#contact" class="inline-block px-8 py-4 bg-white text-black font-bold rounded-full tracking-wide hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-white/10">
+                <a href="#latest-work" class="inline-block px-8 py-4 btn-gold font-bold rounded-full tracking-wide hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-white/10">
                     Experience The Edit 
                 </a>
             </div>
@@ -66,28 +95,30 @@
 
     </section>
  
-       <section id="contact" class="h-40 bg-black text-center pt-10">
-           </section>
+       
 
-<div class="bg-zinc-900 p-4 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 border border-zinc-800 hover:border-zinc-700 transition">
-                    <div>
-                        <h4 class="font-semibold text-base text-white">Our Latest Cinematic Video's Audio</h4>
-                        <p class="text-xs text-gray-400">Trending Audio | listen full audio </p>
-                    </div>
-                    <audio controls class="w-full md:w-72">
-                        <source src="AUDIO.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
+
 
             </div>
         </div>
     </section>
 
+<section class="stats"><div class="max-w-6xl mx-auto px-4">
+<h2 class="font-display text-3xl md:text-5xl font-bold text-center">Experience</h2>
+<p class="text-center text-zinc-500 mt-2 mb-10">5+ years of editing, now growing in Premiere Pro</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+<div class="xp-card"><p class="xp-num font-display">6 months</p><h3 class="font-display">Premiere Pro</h3></div>
+<div class="xp-card"><p class="xp-num font-display">5 years</p><h3 class="font-display">CapCut</h3></div>
+<div class="xp-card"><p class="xp-num font-display">VN</p><h3 class="font-display">In my toolkit</h3></div></div>
+<div class="flex flex-wrap justify-center gap-3 mt-10">
+<span class="pill">Short cinematic</span><span class="pill">Long cinematic</span><span class="pill">Long podcasts</span><span class="pill">Pre-wedding</span></div>
+</div></section>
+
 <section id="latest-work" class="py-24 bg-black border-t border-zinc-900 px-4">
         <div class="max-w-6xl mx-auto">
             
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-400 to-zinc-600">
+                <h2 class="font-display text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-400 to-zinc-600">
                     Our Latest Masterpieces
                 </h2>
                 <p class="text-zinc-500 mt-3 text-base md:text-lg max-w-xl mx-auto font-medium">
@@ -96,15 +127,51 @@
             </div>
 
             <div class="mb-24">
-                <h3 class="text-xl md:text-2xl font-bold tracking-wider text-zinc-400 uppercase mb-10 border-b border-zinc-800 pb-3">
-                    🎬 Cinematic & Landscape Edits
-                </h3>
+                <h3 class="sec-title font-display">Featured Reels</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<li class="work-card p-6 rounded-2xl">
+                        <div class="w-full aspect-[9/16] max-w-[320px] mx-auto bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
+                            <iframe loading="lazy"
+class="w-full h-full"
+src="https://www.youtube.com/embed/P8EtUnVWvKY"
+frameborder="0"
+allowfullscreen>
+</iframe>
+                        </div>
+                        <div class="mt-6 space-y-2 text-center md:text-left">
+                            <h4 class="font-display text-2xl font-bold text-white">Destination cinematic shoot of Taj Mahal </h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">
+                               This video is shot at Taj Mahal on device S24. Edited in CapCut. We try to add more sfx and match clips according to our audio. 
+                            </p>
+                        </div>
+                    </li>
+<li class="work-card p-6 rounded-2xl">
+                        <div class="w-full aspect-[9/16] max-w-[320px] mx-auto bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
+                            <iframe loading="lazy"
+class="w-full h-full"
+src="https://www.youtube.com/embed/1DN6e1YemSM"
+frameborder="0"
+allowfullscreen>
+</iframe>
+                        </div>
+                        <div class="mt-6 space-y-2 text-center md:text-left">
+                            <h4 class="font-display text-2xl font-bold text-white">Bride's Portrait Slow-Motion Reel</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">
+                                Smooth aesthetic vertical storytelling featuring the text behind subject effect and cinematic soft color-grading masks.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-24">
+                <h3 class="sec-title font-display">Cinematic Films</h3>
                 
                 <ul class="space-y-16">
                     
-                    <li class="flex flex-col lg:flex-row items-center gap-8 bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
+                    <li class="flex flex-col lg:flex-row items-center gap-8 work-card p-6 rounded-2xl">
                         <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                            <iframe
+                            <iframe loading="lazy"
                                   class="w-full h-full"
                                 src="https://www.youtube.com/embed/9ralIiDVedg"
                                 title="YouTube video player"
@@ -113,16 +180,16 @@
                             </iframe>
                         </div>
                         <div class="w-full lg:w-1/2 space-y-3">
-                            <h4 class="text-xl md:text-3xl font-extrabold text-white leading-tight">Proffesional Trailor<br>Presented By Visionaryvibee</h4>
-                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                            <h4 class="font-display text-2xl md:text-4xl font-bold text-white leading-tight">Professional Trailer<br>Presented By Visionaryvibee</h4>
+                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
                                 This exclusive edit focuses on high-end cinematic effects fx and transitions . We utilized advanced speed ramping techniques and precise audio beat-matching to perfectly sync the transitions.
                             </p>
                         </div>
                     </li>
 
-                    <li class="flex flex-col lg:flex-row-reverse items-center gap-8 bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
+                    <li class="flex flex-col lg:flex-row-reverse items-center gap-8 work-card p-6 rounded-2xl">
                         <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                           <iframe
+                           <iframe loading="lazy"
 class="w-full h-full"
 src="https://www.youtube.com/embed/Zy6vuY642gE"
 frameborder="0"
@@ -130,16 +197,16 @@ allowfullscreen>
 </iframe>
                         </div>
                         <div class="w-full lg:w-1/2 space-y-3">
-                            <h4 class="text-xl md:text-3xl font-extrabold text-white leading-tight">Cinematic Video of <br>Vakil Sahib Ji</h4>
-                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                            <h4 class="font-display text-2xl md:text-4xl font-bold text-white leading-tight">Cinematic Video of <br>Vakil Sahib Ji</h4>
+                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
                                 A showcase of flawless post-production work where natural lighting meets professional digital enhancements. Every transition in this edit was designed seamlessly to highlight intricate textures and emotions.
                             </p>
                         </div>
                     </li>
 
-                    <li class="flex flex-col lg:flex-row items-center gap-8 bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
+                    <li class="flex flex-col lg:flex-row items-center gap-8 work-card p-6 rounded-2xl">
                       <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-    <iframe
+    <iframe loading="lazy"
         class="w-full h-full"
         src="https://www.youtube.com/embed/faoFcEpIFtY"
         frameborder="0"
@@ -148,16 +215,16 @@ allowfullscreen>
     </iframe>
 </div>
                         <div class="w-full lg:w-1/2 space-y-3">
-                            <h4 class="text-xl md:text-3xl font-extrabold text-white leading-tight">Premium Destination Shoot<br>MBA Jagmalwali </h4>
-                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                            <h4 class="font-display text-2xl md:text-4xl font-bold text-white leading-tight">Premium Destination Shoot<br>MBA Jagmalwali </h4>
+                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
                                 Breaking away from regular templates, this film brings a modern, high-impact aesthetic to cinematography . It features customized sound design using risers and ambient atmospheric soundscapes.
                             </p>
                         </div>
                     </li>
 
-                    <li class="flex flex-col lg:flex-row-reverse items-center gap-8 bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
+                    <li class="flex flex-col lg:flex-row-reverse items-center gap-8 work-card p-6 rounded-2xl">
                         <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                           <iframe
+                           <iframe loading="lazy"
 class="w-full h-full"
 src="https://www.youtube.com/embed/1ZYY0gqBqtw"
 frameborder="0"
@@ -166,17 +233,17 @@ allowfullscreen>
 </iframe>
                         </div>
                         <div class="w-full lg:w-1/2 space-y-3">
-                            <h4 class="text-xl md:text-3xl font-extrabold text-white leading-tight">Humayun Tomb Delhi <br>Cinematic Video Of Our Client</h4>
-                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                            <h4 class="font-display text-2xl md:text-4xl font-bold text-white leading-tight">Humayun Tomb Delhi <br>Cinematic Video Of Our Client</h4>
+                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
                                 This edit utilizes a unique desaturated, pastel color palette to create a dreamy, nostalgic mood. The focus is entirely on a tight narrative flow, utilizing smooth cross-dissolves and light leaks with perfect cuts and transitions.
                             </p>
                         </div>
                     </li>
 
                     
-                    <li class="flex flex-col lg:flex-row items-center gap-8 bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
+                    <li class="flex flex-col lg:flex-row items-center gap-8 work-card p-6 rounded-2xl">
                         <div class="w-full lg:w-1/2 aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                            <iframe
+                            <iframe loading="lazy"
 class="w-full h-full"
 src="https://www.youtube.com/embed/vf2M8f4Bu5Y"
 frameborder="0"
@@ -184,9 +251,9 @@ allowfullscreen>
 </iframe>
                         </div>
                         <div class="w-full lg:w-1/2 space-y-3">
-                            <h4 class="text-xl md:text-3xl font-extrabold text-white leading-tight">Pinjore Garden<br>Cinematic Reel</h4>
+                            <h4 class="font-display text-2xl md:text-4xl font-bold text-white leading-tight">Pinjore Garden<br>Cinematic Reel</h4>
 
-<p class="text-zinc-400 text-sm md:text-base leading-relaxed line-clamp-3">
+<p class="text-zinc-400 text-sm md:text-base leading-relaxed">
                                 Tailored for our advertisements, this edit integrates smooth graphics with crisp audio transitions and glow effect. Ideal for showcasing standard high-definition broadcast layouts.
                             </p>
                         </div>
@@ -195,78 +262,14 @@ allowfullscreen>
                 </ul>
             </div>
 
-            <div>
-                <h3 class="text-xl md:text-2xl font-bold tracking-wider text-zinc-400 uppercase mb-10 border-b border-zinc-800 pb-3">
-                    ⚡️ High-Impact Vertical Reels (9:16)
-                </h3>
-                
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                    <li class="bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
-                        <div class="w-full aspect-[9/16] max-w-[320px] mx-auto bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                            <!-- Aapki YouTube Short ki Iframe (w-full h-full classes add ki gayi hain) -->
-                            <iframe
-                                class="w-full h-full"
-                                src="https://www.youtube.com/embed/_SkBgvWpfFc"
-                                title="SR Tailors | TailorMade #sahilcreations #cinematic #tailoring"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <div class="mt-6 space-y-2 text-center md:text-left">
-                            <!-- Video Title -->
-                            <h4 class="text-xl font-extrabold text-white">SR Tailors | Cinematic Reel</h4>
-                            <!-- Video Description -->
-                            <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3">
-                                Cinematic fashion and tailoring reel edited for SR Tailors. Showcasing premium details and smooth transitions to highlight the craftsmanship.
-                            </p>
-                        </div>
-                    </li>
-                    
-                    <li class="bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
-                        <div class="w-full aspect-[9/16] max-w-[320px] mx-auto bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                            <iframe
-class="w-full h-full"
-src="https://www.youtube.com/embed/P8EtUnVWvKY"
-frameborder="0"
-allowfullscreen>
-</iframe>
-                        </div>
-                        <div class="mt-6 space-y-2 text-center md:text-left">
-                            <h4 class="text-xl font-extrabold text-white">Destination cinematic shoot Of Taj Mahal </h4>
-                            <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3">
-                               This video is shooted at Taj Mahal on device S24 . Editedd in Capcut . we try to add more sfx and match clips acccording to our audio . 
-                            </p>
-                        </div>
-                    </li>
-
-                    <li class="bg-zinc-950 p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition">
-                        <div class="w-full aspect-[9/16] max-w-[320px] mx-auto bg-zinc-900 rounded-xl overflow-hidden shadow-xl">
-                            <iframe
-class="w-full h-full"
-src="https://www.youtube.com/embed/1DN6e1YemSM"
-frameborder="0"
-allowfullscreen>
-</iframe>
-                        </div>
-                        <div class="mt-6 space-y-2 text-center md:text-left">
-                            <h4 class="text-xl font-extrabold text-white">Bride's Portrait Slow-Motion Reel</h4>
-                            <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3">
-                                Smooth aesthetic vertical storytelling featuring the text behind subject effect and cinematic soft color-grading masks.
-                            </p>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
+            
 
         </div>
     </section>
     <!-- Font Awesome Link (Agar aapke paas pehle se nahi hai, toh ise head tag mein daalein) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<section class="footer-cta-section">
+<section id="contact" class="footer-cta-section">
     <div class="footer-container">
           
        <!-- 1. FEEDBACK SECTION -->
